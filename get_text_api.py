@@ -272,6 +272,6 @@ def after_request(response):
 
 
 if __name__ == '__main__':
-    # Run on port 5000 by default
-    app.run(host='0.0.0.0', port=5000, debug=False)
-
+    # Get port from environment variable (Railway provides this)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
